@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faraz Jalilzadeh - Dental Professional & Biomedical Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --shadow: 0 4px 8px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+            transition: transform 0.5s ease;
+        }
+        
+        .profile-pic:hover {
+            transform: scale(1.05);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--light-color);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255,255,255,0.2);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.4rem;
+        }
+        
+        .social-link:hover {
+            background-color: white;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .section {
+            padding: 60px 20px;
+            background-color: white;
+            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .about-text {
+            max-width: 800px;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .skill-card {
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 150px;
+            transition: var(--transition);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .skill-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .education-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .edu-item {
+            background-color: var(--light-color);
+            padding: 25px;
+            border-radius: 10px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .edu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .edu-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--secondary-color);
+        }
+        
+        .edu-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        
+        .edu-content {
+            flex: 1;
+        }
+        
+        .edu-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .edu-item .date {
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .experience-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .exp-item {
+            background-color: var(--light-color);
+            padding: 25px;
+            border-radius: 10px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .exp-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .exp-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--accent-color);
+        }
+        
+        .exp-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .exp-item .date {
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .awards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .award-card {
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: 10px;
+            transition: var(--transition);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .award-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .cert-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .cert-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        
+        .cert-info {
+            flex: 1;
+        }
+        
+        .award-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .award-card .year {
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-icon {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
+        .language-skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .language-card {
+            background-color: var(--light-color);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 150px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .language-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .language-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .language-flag {
+            width: 24px;
+            height: 16px;
+            border-radius: 2px;
+            object-fit: cover;
+        }
+        
+        .language-level {
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.2rem;
+            }
+            
+            .section {
+                padding: 40px 15px;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .social-links {
+                flex-direction: row;
+            }
+            
+            .skills-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .skill-card {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .language-skills {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .language-card {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .edu-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .edu-logo {
+                width: 50px;
+                height: 50px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+            
+            .profile-pic {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .language-card {
+                min-width: 120px;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        .delay-1 {
+            animation-delay: 0.1s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.3s;
+        }
+        
+        .delay-4 {
+            animation-delay: 0.4s;
+        }
+        
+        /* Interactive elements */
+        .interactive-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            margin-top: 20px;
+        }
+        
+        .interactive-btn:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        .interactive-btn:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="https://media.licdn.com/dms/image/v2/C4E03AQGJo0Wj7kQpKA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517270592414?e=1762387200&v=beta&t=9Dbw_v_YcZZRBBxTJzFlR2e0W3WZywmxu55IUl21BX0" alt="Faraz Jalilzadeh" class="profile-pic fade-in">
+            <h1 class="fade-in delay-1">Faraz Jalilzadeh</h1>
+            <h2 class="fade-in delay-2">Doctor of Dentistry & Biomedical Engineer</h2>
+            <div class="social-links fade-in delay-3">
+                <a href="https://www.linkedin.com/in/faraz-jalilzadeh" class="social-link" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.instagram.com/dr_farazjz" class="social-link" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://orcid.org/0009-0001-0011-6076" class="social-link" target="_blank" aria-label="ORCID">
+                    <i class="fab fa-orcid"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section class="section">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p class="about-text fade-in delay-1">
+                    Aspiring PhD candidate with a DMD from Azerbaijan Medical University and a Bachelor's in Biomedical Engineering. I bring an interdisciplinary background that integrates clinical dentistry with biomedical innovation. Fluent in multiple languages and internationally recognized for scientific creativity, I am particularly interested in research that advances dental technologies, oral pathology, biomaterials, and AI-assisted diagnostics. I'm passionate about bridging the gap between clinical dentistry and cutting-edge biomedical engineering. My journey has taken me from designing robotic exoskeletons to researching AI-assisted diagnostics in dentistry. I believe that interdisciplinary approaches are key to solving complex medical challenges and improving patient outcomes.
+                </p>
+                
+                
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-container">
+                <div class="skill-card fade-in delay-1">
+                    <h3>Scientific Writing</h3>
+                </div>
+                <div class="skill-card fade-in delay-2">
+                    <h3>Python/R/SPSS</h3>
+                </div>
+                <div class="skill-card fade-in delay-3">
+                    <h3>Medical Imaging Analysis</h3>
+                </div>
+                <div class="skill-card fade-in delay-4">
+                    <h3>Artificial Intelligence</h3>
+                </div>
+                <div class="skill-card fade-in delay-1">
+                    <h3>Clinical Research</h3>
+                </div>
+                <div class="skill-card fade-in delay-2">
+                    <h3>Robotics</h3>
+                </div>
+                <div class="skill-card fade-in delay-3">
+                    <h3>PCR</h3>
+                </div>
+                <div class="skill-card fade-in delay-4">
+                    <h3>Teamwork</h3>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Languages</h2>
+            <div class="language-skills">
+                <div class="language-card fade-in delay-1">
+                    <h3><img src="https://flagcdn.com/az.svg" alt="Azerbaijani flag" class="language-flag"> Azerbaijani</h3>
+                    <div class="language-level">Native</div>
+                </div>
+                <div class="language-card fade-in delay-2">
+                    <h3><img src="https://flagcdn.com/ir.svg" alt="Persian flag" class="language-flag"> Persian</h3>
+                    <div class="language-level">Native</div>
+                </div>
+                <div class="language-card fade-in delay-3">
+                    <h3><img src="https://flagcdn.com/us.svg" alt="English flag" class="language-flag"> English</h3>
+                    <div class="language-level">Fluent (TOEFL iBT 103)</div>
+                </div>
+                <div class="language-card fade-in delay-4">
+                    <h3><img src="https://flagcdn.com/tr.svg" alt="Turkish flag" class="language-flag"> Turkish</h3>
+                    <div class="language-level">Fluent</div>
+                </div>
+                <div class="language-card fade-in delay-1">
+                    <h3><img src="https://flagcdn.com/it.svg" alt="Italian flag" class="language-flag"> Italian</h3>
+                    <div class="language-level">Intermediate</div>
+                </div>
+                <div class="language-card fade-in delay-2">
+                    <h3><img src="https://flagcdn.com/de.svg" alt="German flag" class="language-flag"> German</h3>
+                    <div class="language-level">Basics</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-container">
+                <div class="edu-item fade-in delay-1">
+                    <img src="https://media.licdn.com/dms/image/v2/C4E0BAQFPjyj7jfxCCg/company-logo_100_100/company-logo_100_100/0/1635066103194?e=1762387200&v=beta&t=WDrMbtb7KvwzMbbLVVx59Soq9mIak12h3lP3aYKr6GY" alt="Azerbaijan Medical University" class="edu-logo">
+                    <div class="edu-content">
+                        <h3>Azerbaijan Medical University</h3>
+                        <div class="date">2016-2022</div>
+                        <p>DMD. Dentistry (in English) - GPA: 92.48/100</p>
+                    </div>
+                </div>
+                <div class="edu-item fade-in delay-2">
+                    <img src="https://media.licdn.com/dms/image/v2/C4D0BAQGP-Vwe2-KKXg/company-logo_100_100/company-logo_100_100/0/1630454766420?e=1762387200&v=beta&t=1XsGtvYyfyRmCOYFRWdVvJm_s2mjPhPn5F13iCy7Yck" alt="Azad University of Tabriz" class="edu-logo">
+                    <div class="edu-content">
+                        <h3>Azad University of Tabriz</h3>
+                        <div class="date">2013-2016</div>
+                        <p>Bachelor's of Biomedical Engineering - GPA: 15.38/20</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-container">
+                <div class="exp-item fade-in delay-1">
+                    <h3>General Dentist</h3>
+                    <div class="date">2019-Present</div>
+                    <p>Self-employed at Private Dental Clinic</p>
+                </div>
+                <div class="exp-item fade-in delay-2">
+                    <h3>General Dentist</h3>
+                    <div class="date">2023-2024</div>
+                    <p>Shafamehr Dental Clinic</p>
+                </div>
+                <div class="exp-item fade-in delay-3">
+                    <h3>Internship as General Dentist</h3>
+                    <div class="date">2022-2023</div>
+                    <p>Azerbaijan Medical University, Baku</p>
+                </div>
+                <div class="exp-item fade-in delay-4">
+                    <h3>Teaching Programming Microcontrollers</h3>
+                    <div class="date">2013-2016</div>
+                    <p>Scientific Association of Biomedical Engineering of Islamic Azad University Tabriz Branch</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Certifications & Training</h2>
+            <div class="awards-container">
+                <div class="award-card fade-in delay-1">
+                    <div class="cert-header">
+                        <img src="https://media.licdn.com/dms/image/v2/D4D0BAQHR841FsETsQg/company-logo_100_100/B4DZc1BujiHwAQ-/0/1748941335432/faradars_logo?e=1762387200&v=beta&t=fTsV0y3a_MWG3cVJQSng6EuwWXKtiv_XWTMumvkZyeQ" alt="FaraDars Organization" class="cert-logo">
+                        <div class="cert-info">
+                            <h3>
+                                <a href="https://faradars.org/verify/2F24F1FD?lang=en" target="_blank" rel="noopener" style="color: var(--primary-color); text-decoration: none;">
+                                    FaraDars Organization</a>
+                            </h3>
+                            <div class="year">2025</div>
+                        </div>
+                    </div>
+                    <p>SPSS Essentials</p>
+                </div>
+                <div class="award-card fade-in delay-1">
+                    <div class="cert-header">
+                        <img src="https://media.licdn.com/dms/image/v2/C560BAQEWtM1c1Hwj2g/company-logo_100_100/company-logo_100_100/0/1630663243423?e=1762387200&v=beta&t=tQjvYFfVUVBeFArbjFddSW4K_4hRxrOOzJEsI1dYW6Q" alt="Dubai Centre for AI" class="cert-logo">
+                        <div class="cert-info">
+                            <h3>
+                <a href="https://omp.dub.ai/certificate/pWgwL9DMkgZo" target="_blank" rel="noopener" style="color: var(--primary-color); text-decoration: none;">
+                    Dubai Centre for AI
+                </a>
+                            </h3>
+                            <div class="year">2025</div>
+                        </div>
+                    </div>
+                    <p>One Million Prompters Program</p>
+                </div>
+                <div class="award-card fade-in delay-2">
+                    <div class="cert-header">
+                        <img src="https://media.licdn.com/dms/image/v2/C4D0BAQGP-Vwe2-KKXg/company-logo_100_100/company-logo_100_100/0/1630454766420?e=1762387200&v=beta&t=1XsGtvYyfyRmCOYFRWdVvJm_s2mjPhPn5F13iCy7Yck" alt="Biotechnology Center" class="cert-logo">
+                        <div class="cert-info">
+                            <h3>Biotechnology Center</h3>
+                            <div class="year">2015</div>
+                        </div>
+                    </div>
+                    <p>Application of Biotechnology in Different Fields of Science</p>
+                </div>
+                <div class="award-card fade-in delay-3">
+                    <div class="cert-header">
+                        <img src="https://media.licdn.com/dms/image/v2/C560BAQEFV5MekOyXcw/company-logo_100_100/company-logo_100_100/0/1631339121708?e=1762387200&v=beta&t=zAPXgg0VmNp9kzk1Sz88Kl5ZDT5dvbSZTJznkpft2fg" alt="Royan International Summer School" class="cert-logo">
+                        <div class="cert-info">
+                            <h3>Royan International Summer School</h3>
+                            <div class="year">2015</div>
+                        </div>
+                    </div>
+                    <p>Stem Cells and Development Biology</p>
+                </div>
+                <div class="award-card fade-in delay-4">
+                    <div class="cert-header">
+                        <img src="https://media.licdn.com/dms/image/v2/C4E0BAQE4o3fcqpcPHg/company-logo_100_100/company-logo_100_100/0/1631321387026?e=1762387200&v=beta&t=abnEYQjblpVdL4f5It5WRxlt6Ie4rynEnT4o9KUa87s" alt="Tehran University of Medical Sciences" class="cert-logo">
+                        <div class="cert-info">
+                            <h3>Tehran University of Medical Sciences</h3>
+                            <div class="year">2021</div>
+                        </div>
+                    </div>
+                    <p>Dentistry Winter School</p>
+                </div>
+                <div class="award-card fade-in delay-1">
+                    <div class="cert-header">
+                        <img src="https://media.licdn.com/dms/image/v2/C4D0BAQGexnfBxeEG-g/company-logo_100_100/company-logo_100_100/0/1630530042036/coursera_logo?e=1762387200&v=beta&t=hwF4PjXaE5nfwlzavCeyBlNSnsci0-za4rMx1rqQlvA" alt="University of Hong Kong" class="cert-logo">
+                        <div class="cert-info">
+                            <h3>
+                                <a href="https://www.coursera.org/account/accomplishments/certificate/ZTSYKR8A54X2" target="_blank" rel="noopener" style="color: var(--primary-color); text-decoration: none;">
+                                    University of Hong Kong</a>
+                            </h3>
+                            <div class="year">2022</div>
+                        </div>
+                    </div>
+                    <p>Implant Dentistry (Coursera)</p>
+                </div>
+                <div class="award-card fade-in delay-2">
+                    <div class="cert-header">
+                        <img src="https://i.postimg.cc/SsxWQZKQ/logo.jpg" alt="DermaLab Esthetics Institute" class="cert-logo">
+                        <div class="cert-info">
+                            <h3>DermaLab Esthetics Institute</h3>
+                            <div class="year">2022</div>
+                        </div>
+                    </div>
+                    <p>Botulinum Neurotoxin and Dermal Fillers</p>
+                </div>
+                <div class="award-card fade-in delay-3">
+                    <div class="cert-header">
+                        <img src="https://media.licdn.com/dms/image/v2/D4D0BAQHR841FsETsQg/company-logo_100_100/B4DZc1BujiHwAQ-/0/1748941335432/faradars_logo?e=1762387200&v=beta&t=fTsV0y3a_MWG3cVJQSng6EuwWXKtiv_XWTMumvkZyeQ" alt="FaraDars Organization" class="cert-logo">
+                        <div class="cert-info">
+                            <h3>
+                                <a href="https://faradars.org/verify/A933826E?lang=en" target="_blank" rel="noopener" style="color: var(--primary-color); text-decoration: none;">
+                                    FaraDars Organization</a>
+                            </h3>
+                            <div class="year">2025</div>
+                        </div>
+                    </div>
+                    <p>ChatGPT for Targeted Professional Searches</p>
+                </div>
+                <div class="award-card fade-in delay-4">
+                    <div class="cert-header">
+                        <img src="https://media.licdn.com/dms/image/v2/D4D0BAQHR841FsETsQg/company-logo_100_100/B4DZc1BujiHwAQ-/0/1748941335432/faradars_logo?e=1762387200&v=beta&t=fTsV0y3a_MWG3cVJQSng6EuwWXKtiv_XWTMumvkZyeQ" alt="FaraDars Organization" class="cert-logo">
+                        <div class="cert-info">
+                            <h3>
+                                <a href="https://faradars.org/verify/18146CDF?lang=en" target="_blank" rel="noopener" style="color: var(--primary-color); text-decoration: none;">
+                                    FaraDars Organization</a>
+                            </h3>
+                            <div class="year">2025</div>
+                        </div>
+                    </div>
+                    <p>Mastering ChatGPT for Teaching and Learning</p>
+                </div>
+                <div class="award-card fade-in delay-1">
+                    <div class="cert-header">
+                        <img src="https://media.licdn.com/dms/image/v2/D4D0BAQHR841FsETsQg/company-logo_100_100/B4DZc1BujiHwAQ-/0/1748941335432/faradars_logo?e=1762387200&v=beta&t=fTsV0y3a_MWG3cVJQSng6EuwWXKtiv_XWTMumvkZyeQ" alt="FaraDars Organization" class="cert-logo">
+                        <div class="cert-info">
+                            <h3>
+                                <a href="https://faradars.org/verify/1297B93B?lang=en" target="_blank" rel="noopener" style="color: var(--primary-color); text-decoration: none;">
+                                    FaraDars Organization</a>
+                            </h3>
+                            <div class="year">2025</div>
+                        </div>
+                    </div>
+                    <p>Machine Learning with Python</p>
+                </div>
+                <div class="award-card fade-in delay-2">
+                    <div class="cert-header">
+                        <img src="https://media.licdn.com/dms/image/v2/D4D0BAQHR841FsETsQg/company-logo_100_100/B4DZc1BujiHwAQ-/0/1748941335432/faradars_logo?e=1762387200&v=beta&t=fTsV0y3a_MWG3cVJQSng6EuwWXKtiv_XWTMumvkZyeQ" alt="FaraDars Organization" class="cert-logo">
+                        <div class="cert-info">
+                            <h3>
+                                <a href="https://faradars.org/verify/43E1CE4E?lang=en" target="_blank" rel="noopener" style="color: var(--primary-color); text-decoration: none;">
+                                    FaraDars Organization</a>
+                            </h3>
+                            <div class="year">2025</div>
+                        </div>
+                    </div>
+                    <p>Publishing Articles in International ISI Journals</p>
+                </div>
+                <div class="award-card fade-in delay-2">
+                    <div class="cert-header">
+                        <img src="https://media.licdn.com/dms/image/v2/C4E0BAQGIiLwo6TeTxQ/company-logo_100_100/company-logo_100_100/0/1643480906637?e=1762387200&v=beta&t=e-86_5owrCxwdqdrevEwNaJPQ8Tn8pj7dZKotLSefRk" alt="Paarand Center for Human Enhancement" class="cert-logo">
+                        <div class="cert-info">
+                            <h3>
+                                <a href="https://www.linkedin.com/company/paarand-center-for-human-enhancement" target="_blank" rel="noopener" style="color: var(--primary-color); text-decoration: none;">
+                                    Paarand Center for Human Enhancement</a>
+                            </h3>
+                            <div class="year">2013</div>
+                        </div>
+                    </div>
+                    <p>Introduction to Neurofeedback Course</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Research & Publications</h2>
+            <div class="awards-container">
+                <div class="award-card fade-in delay-1">
+                    <h3>Lidocaine-Induced Conduction Block</h3>
+                    <div class="year">2025</div>
+                    <p>1st International and 2nd National Conference on Cell and Developmental Biology, Kharazmi University, Tehran, Iran</p>
+                </div>
+                <div class="award-card fade-in delay-2">
+                    <h3>Biophysical Simulation Framework</h3>
+                    <div class="year">2025</div>
+                    <p>Investigating Lidocaine-Induced Conduction Block in Trigeminal Aβ and Aδ Fibers</p>
+                </div>
+                <div class="award-card fade-in delay-3">
+                    <h3>Undergraduate Thesis</h3>
+                    <div class="year">2016</div>
+                    <p>Design of EMG Activated Robotic Lower Limb Exoskeleton</p>
+                </div>
+                <div class="award-card fade-in delay-4">
+                    <h3>Modeling of Brain Metabolism Energy</h3>
+                    <div class="year">2015</div>
+                    <p>IEEE International Conference on Knowledge-Based Engineering and Innovation, Tehran, Iran</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Awards & Honors</h2>
+            <div class="awards-container">
+                <div class="award-card fade-in delay-1">
+                    <h3>43rd International Exhibition of Invention</h3>
+                    <div class="year">2015</div>
+                    <p>Silver Medal for Smart Shoe to combat valgus, muscle atrophy, malformations and arthritis</p>
+                </div>
+                <div class="award-card fade-in delay-2">
+                    <h3>12th International Innovation Exhibition ARCA</h3>
+                    <div class="year">2014</div>
+                    <p>Gold Medal for The Laboratory Experimenter Robot with Network Ability</p>
+                </div>
+                <div class="award-card fade-in delay-3">
+                    <h3>Eminent Young of Year</h3>
+                    <div class="year">2014</div>
+                    <p>by Governor of West Azerbaijan, Iran</p>
+                </div>
+                <div class="award-card fade-in delay-4">
+                    <h3>65th International Trade Fair IENA</h3>
+                    <div class="year">2013</div>
+                    <p>Diploma for Balance Supplier to Help Patients With Joint and Muscular Problems</p>
+                </div>
+                <div class="award-card fade-in delay-1">
+                    <h3>Russian House for International Cooperation</h3>
+                    <div class="year">2013</div>
+                    <p>Gold Medal and Diploma for Balance Supplier to Help Patients With Joint and Muscular Problems</p>
+                </div>
+                <div class="award-card fade-in delay-2">
+                    <h3>5th European Exhibition of Creativity and Invention</h3>
+                    <div class="year">2013</div>
+                    <p>Silver Medal for Blood Sugar Lower Machine</p>
+                </div>
+                <div class="award-card fade-in delay-3">
+                    <h3>41st International Exhibition of Invention Geneva</h3>
+                    <div class="year">2013</div>
+                    <p>Gold Medal for a Robot Turn Book Pages for Disabled People by Brain Signals Processing</p>
+                </div>
+                <div class="award-card fade-in delay-4">
+                    <h3>7th International Exhibition of Invention, China</h3>
+                    <div class="year">2012</div>
+                    <p>Bronze Medal for Human Artificial Muscles</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Contact Information</h2>
+            <div class="contact-info">
+                <div class="contact-item fade-in delay-1">
+                    <span class="contact-icon">📞</span>
+                    <span>+98-914-3452600</span>
+                </div>
+                <div class="contact-item fade-in delay-2">
+                    <span class="contact-icon">✉️</span>
+                    <span>faraz.jalilzade@gmail.com</span>
+                </div>
+                <div class="contact-item fade-in delay-3">
+                    <span class="contact-icon">📍</span>
+                    <span>Urmia, Iran</span>
+                </div>
+                <div class="contact-item fade-in delay-4">
+                    <span class="contact-icon">🔗</span>
+                    <span>www.linkedin.com/in/faraz-jalilzadeh</span>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Faraz Jalilzadeh. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Add interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+       
+            
+            
+            // Add hover effects to skill cards
+            const skillCards = document.querySelectorAll('.skill-card');
+            skillCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#dfe6e9';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = '#ecf0f1';
+                });
+            });
+            
+            // Add hover effects to language cards
+            const languageCards = document.querySelectorAll('.language-card');
+            languageCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#dfe6e9';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = '#ecf0f1';
+                });
+            });
+            
+            // Add hover effects to education items
+            const eduItems = document.querySelectorAll('.edu-item');
+            eduItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#dfe6e9';
+                });
+                item.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = '#ecf0f1';
+                });
+            });
+            
+            // Add hover effects to experience items
+            const expItems = document.querySelectorAll('.exp-item');
+            expItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#dfe6e9';
+                });
+                item.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = '#ecf0f1';
+                });
+            });
+            
+            // Add hover effects to award cards
+            const awardCards = document.querySelectorAll('.award-card');
+            awardCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#dfe6e9';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = '#ecf0f1';
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Fade in animations for elements as they come into view
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px 50px 0px"
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all section elements
+            document.querySelectorAll('.section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
+
