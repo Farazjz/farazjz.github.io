@@ -110,7 +110,14 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 16px); }
+        html {
+            scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 16px);
+            -webkit-text-size-adjust: 100%; text-size-adjust: 100%;
+        }
+
+        a, button { -webkit-tap-highlight-color: transparent; }
+
+        h1, h2, h3, h4, p, li { overflow-wrap: break-word; }
 
         body {
             font-family: var(--font-body);
@@ -190,7 +197,8 @@
         .mobile-menu {
             display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; z-index: 99;
             background: var(--nav-bg); backdrop-filter: blur(14px);
-            border-bottom: 1px solid var(--border); padding: 10px 24px 18px;
+            border-bottom: 1px solid var(--border); padding: 10px 24px calc(18px + env(safe-area-inset-bottom, 0px));
+            max-height: calc(100dvh - var(--nav-h)); overflow-y: auto;
         }
         .mobile-menu.open { display: block; }
         .mobile-menu a {
@@ -476,7 +484,7 @@
         footer .heart { color: #f43f5e; }
 
         #toTop {
-            position: fixed; right: 22px; bottom: 22px; z-index: 90;
+            position: fixed; right: 22px; bottom: calc(22px + env(safe-area-inset-bottom, 0px)); z-index: 90;
             width: 46px; height: 46px; border-radius: 14px; border: 1px solid var(--border);
             background: var(--nav-bg); color: var(--text); backdrop-filter: blur(10px);
             cursor: pointer; font-size: 1rem; display: grid; place-items: center;
@@ -506,15 +514,49 @@
             .hamburger { display: grid; }
         }
         @media (max-width: 760px) {
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); padding: 22px 16px; gap: 16px; }
+            .stat .num { font-size: 1.6rem; }
             .proj-grid { grid-template-columns: 1fr; }
             section { padding: 62px 0; }
+            .sec-head { margin-bottom: 36px; }
+            .avatar-wrap { width: 140px; height: 140px; margin-bottom: 22px; }
+            .scroll-hint { display: none; }
+            .btn { padding: 12px 22px; font-size: .92rem; }
+            .hero-sub { font-size: .97rem; }
+            .contact-card { padding: 34px 22px; }
+            .blob-1 { width: 240px; height: 240px; }
+            .blob-2 { width: 210px; height: 210px; }
         }
         @media (max-width: 520px) {
             .skills-grid, .cert-grid, .awards-grid, .lang-grid { grid-template-columns: 1fr; }
             .pub-card { flex-direction: column; gap: 6px; }
             .tl-card { padding: 18px; }
             .contact-card { padding: 30px 20px; }
+        }
+        @media (max-width: 480px) {
+            .container, .nav-inner { padding-left: 18px; padding-right: 18px; }
+            .card { padding: 20px; border-radius: 14px; }
+            .logo { font-size: .98rem; }
+            .avatar-wrap { width: 124px; height: 124px; }
+            .hero-cta { gap: 10px; }
+            .hero-cta .btn { flex: 1 1 auto; justify-content: center; }
+            .hero-social { gap: 10px; }
+            .hero-social a { width: 44px; height: 44px; }
+            .contact-email { display: flex; width: 100%; justify-content: center; padding: 14px 16px; font-size: .95rem; }
+            .contact-meta span { padding: 8px 12px; font-size: .82rem; }
+            .proj-card h3 { font-size: 1.05rem; }
+            #toTop { width: 42px; height: 42px; right: 16px; }
+            .timeline { padding-left: 28px; }
+            .tl-item::before { left: -26px; }
+        }
+        @media (max-width: 360px) {
+            .logo-text { display: none; }
+        }
+
+        /* Avoid sticky hover transforms on touch devices */
+        @media (hover: none) {
+            .card:hover, .btn:hover, .icon-btn:hover, .hero-social a:hover,
+            .contact-email:hover, #toTop:hover, .chip:hover, .filter-btn:hover { transform: none; }
         }
 
         @media print {
@@ -531,7 +573,7 @@
     <nav aria-label="Main navigation">
         <div class="nav-inner">
             <a class="logo" href="#top" aria-label="Faraz Jalilzadeh — home">
-                <span class="logo-mark">FJ</span> Faraz&nbsp;Jalilzadeh
+                <span class="logo-mark">FJ</span><span class="logo-text">Faraz&nbsp;Jalilzadeh</span>
             </a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
@@ -1120,6 +1162,45 @@
                                 <span class="chip">JavaScript</span><span class="chip">Browser security</span><span class="chip">ES modules</span>
                             </div>
                             <a class="proj-link" href="https://github.com/Farazjz/XOR-shield" target="_blank" rel="noopener">
+                                <i class="fa-brands fa-github"></i> View on GitHub <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card proj-card reveal">
+                        <h3><i class="fa-solid fa-comments"></i> OpenCode GroupChat</h3>
+                        <p>Multi-agent group chat rooms for OpenCode — Hermes-style turn-taking between AI personas
+                            collaborating on one shared project. A pure plugin that runs on Windows, macOS &amp; Linux.</p>
+                        <div class="proj-foot">
+                            <div class="proj-tags">
+                                <span class="chip">TypeScript</span><span class="chip">Multi-agent</span><span class="chip">LLM</span><span class="chip">OpenCode plugin</span>
+                            </div>
+                            <a class="proj-link" href="https://github.com/Farazjz/opencode-groupchat" target="_blank" rel="noopener">
+                                <i class="fa-brands fa-github"></i> View on GitHub <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card proj-card reveal" style="transition-delay:.1s">
+                        <h3><i class="fa-brands fa-telegram"></i> OpenCode Telegram Bot</h3>
+                        <p>Telegram notifications &amp; remote control for OpenCode — done cards, permission approvals,
+                            error alerts and full session control from your phone. Single file, zero dependencies.</p>
+                        <div class="proj-foot">
+                            <div class="proj-tags">
+                                <span class="chip">TypeScript</span><span class="chip">Telegram bot</span><span class="chip">Remote control</span><span class="chip">OpenCode plugin</span>
+                            </div>
+                            <a class="proj-link" href="https://github.com/Farazjz/opencode-tgBot" target="_blank" rel="noopener">
+                                <i class="fa-brands fa-github"></i> View on GitHub <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card proj-card reveal">
+                        <h3><i class="fa-solid fa-palette"></i> PixelForge</h3>
+                        <p>PixelForge AI — a pixel art studio with a manual pixel editor, AI-assisted generation and
+                            editing (bring your own provider), animation support and rich import/export options.</p>
+                        <div class="proj-foot">
+                            <div class="proj-tags">
+                                <span class="chip">TypeScript</span><span class="chip">Pixel art</span><span class="chip">AI</span><span class="chip">Animation</span>
+                            </div>
+                            <a class="proj-link" href="https://github.com/Farazjz/PixelForge" target="_blank" rel="noopener">
                                 <i class="fa-brands fa-github"></i> View on GitHub <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
